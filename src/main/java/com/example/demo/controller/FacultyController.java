@@ -29,6 +29,12 @@ public class FacultyController {
         return facultyService.getAllFaculties();
     }
 
+
+
+
+
+
+
     //  creating a get mapping that retrieves the detail of a specific faculty
 
     @GetMapping("/faculty/{facultyId}")
