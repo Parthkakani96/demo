@@ -32,7 +32,6 @@ public class FacultyController {
     //  creating a get mapping that retrieves the detail of a specific faculty
 
     @GetMapping("/faculty/{facultyId}")
-
     private Faculty getFaculty(@PathVariable("facultyId") int facultyId){
         return facultyService.getFacultyById(facultyId);
     }
