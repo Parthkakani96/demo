@@ -23,20 +23,19 @@ public class FacultyController {
     @Autowired
     private StudentRepository studentRepository;
 
+//  Get All Faculty
     @GetMapping("/faculties")
-
     private List<Faculty> getAllFaculty(){
         return facultyService.getAllFaculties();
     }
 
-    //  creating a get mapping that retrieves the detail of a specific faculty
-
+//  Get Faculty by ID
     @GetMapping("/faculty/{facultyId}")
     private Faculty getFaculty(@PathVariable("facultyId") int facultyId){
         return facultyService.getFacultyById(facultyId);
     }
 
-
+//  Get Student with Faculty Details
     @GetMapping("/students/{studId}/faculty")
     public List getContactByStudentId(@PathVariable Long studId){
 
@@ -46,6 +45,7 @@ public class FacultyController {
         return facultyRepository.findByStudentStudId(studId);
     }
 
+//  Update Faculty
     @PutMapping("/students/{studId}/faculty/{facultyId}")
     public Faculty facultyUpdate(@PathVariable Long studId,
                                  @PathVariable int facultyId,
@@ -63,6 +63,7 @@ public class FacultyController {
                 }).orElseThrow(() -> new NotFoundException("Faculty not Found"));
     }
 
+//  Create Faculty
     @PostMapping("/student/{studId}/faculty")
     public Faculty addFaculty(@PathVariable Long studId,
                               @Validated @RequestBody Faculty faculty){
@@ -72,6 +73,4 @@ public class FacultyController {
                     return facultyRepository.save(faculty);
                 }).orElseThrow(() -> new NotFoundException("Student Not Found"));
     }
-
-
 }

@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "faculty")
+@Table
 public class Faculty implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,21 +34,6 @@ public class Faculty implements Serializable {
 
     public Faculty(){
     }
-
-//    public Faculty(String facultyName, String facultyGender, String subjectTakenByFaculty) {
-//        this.facultyName = facultyName;
-//        this.facultyGender = facultyGender;
-//        this.subjectTakenByFaculty = subjectTakenByFaculty;
-//    }
-
-
-//    public Faculty(int facultyId, String facultyName, String facultyGender, String subjectTakenByFaculty, Student student) {
-//        this.facultyId = facultyId;
-//        this.facultyName = facultyName;
-//        this.facultyGender = facultyGender;
-//        this.subjectTakenByFaculty = subjectTakenByFaculty;
-//        this.student = student;
-//    }
 
     public Student getStudent() {
         return student;
