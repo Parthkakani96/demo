@@ -24,6 +24,7 @@ public class FacultyController {
     private StudentRepository studentRepository;
 
     @GetMapping("/faculties")
+
     private List<Faculty> getAllFaculty(){
         return facultyService.getAllFaculties();
     }
